@@ -50,7 +50,7 @@ For any group $G$,
 We denote the sequence containing $k$ consecutive copies of $g$ by $g^{(k)}$. Thus, for example, $g^{(3)}$ is the sequence $g,g,g$.
 \end{nota}
 
-For the symmetric group on $n$ letters, which we denote $S_n$, we can find a slightly better lower bound.
+For the symmetric group on $n$ letters, which we denote $S_n$, we can find a way better lower bound.
 
 \begin{propn}\label{firstbd}
 $r(S_n) \geq \binom{n}{2}+1$.
@@ -127,7 +127,7 @@ But then we have $n$ permutations $b_i$, each mapping the point $n$ to one of $n
 
 \end{proof}
 
-\begin{lemma}\label{avi2}
+\begin{lemma}
 $r(S_{n}) \leq n \cdot r(S_{n-1})$
 \end{lemma}
 
@@ -206,7 +206,7 @@ We now have a succinct proof that $r(S_3) = 4$. The lower bound is given by the 
 
 \section{Week 4}
 
-\subsection{Some algebraic motivation}
+\subsection{Lots of algebraic motivation}
  
 While its value as a combinatorial puzzle is inherent and obvious, the Davenport constant has proved an important tool in various subfields of algebra, number theory, and geometry. The following observation, credited to Davenport in \cite{GaoGeroldingerSurvey2006}, points towards the constant's algebraic utility. Let $R$ be the ring of integers in some algebraic number field with ideal class group $G$, and let $a\in R$ be irreducible. Then, $d(G)$ denotes the maximal number of prime ideals occurring in a prime decomposition of $(a)$.
 
