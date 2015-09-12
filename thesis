@@ -1,0 +1,230 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amscd,amssymb,verbatim}
+\usepackage{amsmath,amsthm,amsfonts}
+\usepackage{enumerate}
+\usepackage{url}
+\usepackage{cases}
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{obs}[lemma]{Observation}
+\newtheorem{propn}[lemma]{Proposition}
+\newtheorem{thm}[lemma]{Theorem}
+\newtheorem{cor}[lemma]{Corollary}
+\theoremstyle{definition}
+\newtheorem*{defn}{Definition}
+\newtheorem*{nota}{Notation}
+\begin{document}
+
+\title{ThesiS? (Internal Consistency check since last addition NOT YET DONE)}
+\author{Kevin Halasz}
+
+\maketitle
+
+\section{Week 1 (Edits NOT YET made)}
+\subsection{intro}
+
+This document offers a natural extension of some known Abelian group parameters to \emph{all} groups. We will therefore refrain from reordering the group elements when taking products. Our results will cover Abelian groups, although for these special cases an easier proof can almost surely be found.
+
+\begin{nota}
+Given a multiplicative group $G$, we write $e_G$ for its identity element. When there is no risk of ambiguity, we omit the subscript and simply write $e$.
+\end{nota}
+
+
+\begin{defn}
+Let $G$ be a multiplicative group. The \emph{restricted Davenport constant} of $G$, denoted $r(G)$, is the smallest integer $t$ such that for \emph{every} sequence $g_1,g_2,\ldots,g_t$ of $t$ (not necessarily distinct) elements of $G$, we can find a collection of indices $i_1<i_2<\cdots<i_k$ ($1 \leq k \leq t$) such that
+\[ \prod_{j=1}^k g_{i_j} = e_G.\]
+We refer to the sequence $g_{i_1},g_{i_2},\ldots,g_{i_k}$ as an \emph{id-subsequence}.
+\end{defn}
+
+
+We begin by giving some elementary bounds. Let $m(G) = \max\{o(g)|g \in G\}$ be the maximum order of any group element. We see that $m(G) -1 \leq r(G)$ by considering the sequence containing some element $g \in G$ of order $m(G)$ exactly $m(G)-1$ times. On the other hand, let $S = g_1,g_2,\ldots,g_n$ be an arbitrary sequence of length $n := |G|$, and let $b_k := g_1g_2\cdots g_k$ for $1 \leq k \leq n$. We claim that $S$ has an id-subsequence. If some $b_i = e_G$ we are done. Otherwise, we have $n$ products $b_i$ taking on $n-1$ different values, so there exist some $i,j \in [n]$ such that $b_i = b_j$. Then, $g_ig_{i+1}\cdots g_j = e_G$, proving the claim. We thus make the following observation:
+
+\begin{obs}\label{basic}
+For any group $G$,
+\[ m(G)  \leq r(G) \leq |G|.\]
+\end{obs}
+
+\subsection{basic results}
+
+\begin{nota}
+We denote the sequence containing $k$ consecutive copies of $g$ by $g^{(k)}$. Thus, for example, $g^{(3)}$ is the sequence $g,g,g$.
+\end{nota}
+
+For the symmetric group on $n$ letters, which we denote $S_n$, we can find a slightly better lower bound.
+
+\begin{propn}\label{firstbd}
+$r(S_n) \geq \binom{n}{2}+1$.
+\end{propn}
+
+\begin{proof}
+We claim that the sequence
+\[S = (1 \; 2 \; \cdots \; n)^{(n-1)} , (1 \; 2 \; \cdots \; n-1)^{(n-2)}, \ldots , (1 \; 2 \; 3)^{(2)} , (1 \; 2)\]
+contains no id-subsequence. Because $|S| = \sum_{i=1}^{n-1} i = \frac{n(n-1)}{2}$, the claim yields the desired result. Now, let $S_0$ be an arbitrary subsequence of $S$, and define $\rho := \prod_{g \in S_0} g$. Taking products of consecutive, duplicate elements, we can write $\rho = \sigma_n \sigma_{n-1} \cdots \sigma_2$, where $\sigma_i \in \langle (1 \; 2 \; \cdots \; i) \rangle$, the cyclic group of order $i$, and at least one $\sigma_i$ is not the identity.
+
+ Let $f$ be the largest index for which $\sigma_f$ is not the identity. Using the orbit-stabilizer lemma, one may check that every non-identity element of $\langle (1 \; 2 \; \cdots \; f) \rangle$ has no fixed points in the set $[f]$. Thus, there is some index $j \neq f$ such that $\sigma_f(j) = f$. However, all $\sigma_i$ for which $i < f$ fix $f$. Therefore, $\rho(j) = f$, so that $\rho \neq e$ and, because $S_0$ was chosen arbitrarily, $S$ has no id-subsequence.
+
+\end{proof}
+
+\section{Week 2 (No written feedback yet)}
+
+The following table contains known results (and is updated weekly):
+
+\begin{center}
+    \begin{tabular}{|c|c|p{7.5cm}|c|}
+    \hline
+    $n$ & $r(S_n)$ & Lower Bound & Upper Bound \\ \hline \hline
+    2 & 2 & $(1\;2)$ & Observation \ref{basic} \\ \hline
+    3 & 4 & $(1\;2\;3)^{(2)},(1\;2)$& Corollary \ref{OlsonWhite2} \\ \hline
+    4 & 9 & $(1\;2\;3\;4)^{(3)},(1\;2\;4\;3),(1\;3\;2\;4)^{(3)},$ $(1\;2\;4\;3)$ & Computer Search \\ \hline
+    5 & [19,45]& $(1\;2)(3\;4\;5)^{(5)},(1\;5\;2)(3\;4),(1\;5)(3\;4\;2)^{(5)},$ $(1\;5\;2)(3\;4),(1\;3\;4)(2\;5)^{(5)},(1\;5\;2)(3\;4)$ & Lemma \ref{avi2} \\ \hline
+%    $n$ & 2 & 3 & 4 & 5  & 6 & 7\\ \hline
+%    $r(S_n)$ & 2 & 4 & $9^\ast$ & [19,45] & [19,270] & [23,1890] \\ \hline
+%    Lower bound & $(1 \; 2)$ & $(1 \; 2 \; 3)^{(2)},(1\;2)$ & & & & \\ \hline
+
+
+    \end{tabular}
+\end{center}
+
+\begin{nota}
+Let $G$ be a finite group. Borrowing from \cite{OlsonWhite1977}, we say that a sequence $g_1,g_2,\ldots,g_k$ of elements of $G$ (with repetition allowed) \emph{represents} $g \in G$ if we can write
+\[ g = g_{i_1}g_{i_2}\cdots g_{i_t} \hspace{24 pt} (1 \leq i_1 < i_2 < \cdots < i_t;  \hspace{10 pt} t \geq 1).\]
+\end{nota}
+
+We have the following, very nice asymptotic approximation.
+
+\begin{thm}
+$r(S_n) = \Omega\left(\sqrt{\frac{n}{\log n}} e^{\sqrt{n \log n}}\right)$.
+\end{thm}
+
+\begin{proof}
+
+Let $g(n)$ denote the maximum order of an element in $S_n$, and let $\nu(g(n))$ denote the number of disjoint cycles in this element. Using techniques similar to those used in the proof of Proposition \ref{firstbd}, we construct a length $\nu(g(n))g(n)$ sequence in $S_n$ that does not represent $e$.
+
+The result then follows directly from Theorem 1 and Theorem 2 of \cite{Szalay1980}.
+
+\end{proof}
+
+\section{Week 3(No written feedback yet)}
+\subsection{some lemmas}
+
+\begin{nota}
+Let $G$ be a group acting on a set $X$. For $x \in X$, we denote the stabilizer subgroup of $x$ in $G$ by
+\[ St_G(x) = \{g\in G| x^g = x\}.\]
+\end{nota}
+
+The following collection of lemmas will be used to prove upper bounds later on. We begin with a pair of lemmas due to A. Kulkarni (private communication).
+
+\begin{lemma}\label{avi1}
+Any length $n$ sequence $g_1,g_2,\ldots,g_n$ of permutations in $S_n$ represents an element of $St_{S_n}(n) \cong S_{n-1}$.
+\end{lemma}
+
+\begin{proof}
+This proof is very similar to the proof of the upper bound in Observation \ref{basic}. Consider the collection of group elements
+\[ b_i := (g_1g_2\cdots g_i)^{-1} \text{       for  } 1 \leq i \leq n.\]
+If one of the $b_i$ fixes $n$, then so does $g_1g_2\cdots g_i = b_i^{-1}$, and we have found a subsequence product in $St_{S_n}(n)$. Thus, we may assume that $b_i(n) \neq n$ for all $i$.
+
+But then we have $n$ permutations $b_i$, each mapping the point $n$ to one of $n-1$ other points. By the pigeonhole principle, there is some point $y$ and some indices $1 \leq i < j \leq n$ such that $b_i(n) = b_j(n) = y$. Then, $g_{i+1}g_{i+2}\cdots g_{j} = b_ib_j^{-1} \in St_{S_n}(n)$.
+
+\end{proof}
+
+\begin{lemma}\label{avi2}
+$r(S_{n}) \leq n \cdot r(S_{n-1})$
+\end{lemma}
+
+\begin{proof}
+Let $r_l := r(S_l)$, and let $T = g_1,g_2,\ldots,g_{nr_{n-1}}$ be an arbitrary length $nr_{n-1}$ sequence of permutations in $S_n$. Consider the collection subsequences $T_i = g_{i+1},g_{i+2},\ldots,g_{i+n}$ for $0 \leq i \leq (r_{n-1}-1)$. By Lemma \ref{avi1}, $T_i$ represents some element of $t_i \in St_{S_n}(n)$ for each $i \in [0,r_{n-1}-1]$. We then can form the length $r_{n-1}$ sequence $t_0,t_1,\ldots t_{r_{n-1}-1}$ of permutations in $S_{n-1}$. But then there is some collection of indices $i_1<i_2<\cdots<i_k$ such that $t_{i_1}t_{i_2} \cdots t_{i_k} = e$. Because each $t_i$ is the product of $g_i$ taken in order of increasing index, and because $j<l$ implies the $g_i$ used to form $t_j$ all have smaller indices than the $g_i$ used to form $t_l$, $T$ represents $e$.
+
+\end{proof}
+
+The following lemma is rather straightforward, but it will prove surprisingly powerful.
+
+\begin{lemma}\label{quotients}
+Let $G$ be a finite group of order $n$ and let $N \triangleleft G$ be a normal subgroup. Then
+\[ r(G) \leq r(G/N)r(N)\]
+\end{lemma}
+
+\begin{proof}
+
+For simplicity, let $a:=r(G/N)$ and $b:=r(N)$. Consider an arbitrary sequence $T = g_1,g_2,\ldots,g_{ab}$ of elements in $G$. We want to show that $T$ has an id-subsequence. To do so, consider the collection of length $a$ sequences $T_i := g_{ia}N, g_{ia + 1}N, \ldots , g_{a(i+1)-1}N$ of elements in $G/N$, defined for each $i \in [0,b-1]$. We must have some $i_1<i_2<\cdots<i_k$ such that $g_{i_1}Ng_{i_2}N\cdots g_{i_k}N = N$. We can then define for each $i \in[1,b-1]$ a group element $t_i = g_{i_1}g_{i_2}\cdots g_{i_k} \in N$. Observe that if $i<j$, $g_l \in t_i$, and $g_k \in t_j$, then $l <k$.
+
+We now have a length $b$ sequence $t_0,t_1,\ldots,t_{b-1}$ of elements in $N$. But $b = r(N)$, so there must exist indices $i_1<i_2<\cdots<i_v$ such that $t_{i_1}t_{i_2}\cdots t_{i_v} = e$. Then, by the observation made at the end of the previous paragraph, $T$ has an id-subsequence.
+
+\end{proof}
+
+This gives us the following Corollary
+
+\begin{cor}
+$r(S_n) \leq 2r(A_n)$
+\end{cor}
+\begin{proof}
+
+Note that $A_n \triangleleft S_n$ and $S_n/A_n \cong \mathbb{Z}_2$. Then, by Lemma \ref{quotients},
+\[ r(S_n)\leq r(A_n)r(\mathbb{Z}_2) = 2r(A_n). \]
+\end{proof}
+
+In We have determined computationally that $r(A_4) = 6$, giving us the following somewhat strong upper bound (we have determined computationally that $r(S_4)=9$).
+
+\begin{thm}
+$r(S_4) \leq 12$.
+\end{thm}
+
+
+Trying to prove $r(A_4)=6$ by hand, we start with a lemma:
+
+\begin{lemma}
+Any sequence of length 3 in $A_4$ represents some element of $H =$ $ \langle (1,2)(3,4),(1,3)(2,4) \rangle \cong \mathbb{Z}_2 \times \mathbb{Z}_2$.
+\end{lemma}
+
+\begin{proof}
+
+First observe that $H \triangleleft A_4$. This is because conjugating a permutation yields another permutation with the same cycle type, and because $H$ contains all permutations of cycle type $(2,2)$ in $A_4$. Then, because $[A_4:H] = 3$, $A_4/H \cong \mathbb{Z_3}$. Note that $r(\mathbb{Z}_3)=3$. Thus, for any length 3 sequence $g_1,g_2,g_3$ of elements in $A_4$, we know the sequence $g_1H,g_2H,g_3H$ has an id-subsequence, corresponding to subsequence of the $g_i$ whose product lies in $H$.
+
+\end{proof}
+
+\subsection{A major result from the literature}
+
+
+
+Note that $r(G) \leq m$ if and only if every length $m$ sequence of elements of $G$ represents $e_G$. One of the few results on the restricted Davenport constant known prior to the start of the herein described research project was proven by Olson and White in 1977 \cite{OlsonWhite1977}. We first state the paper's main result, then give its direct corollary which bounds $r(G)$ from above for all groups $G$.
+
+\begin{thm}\label{OlsonWhite1}
+(Olson-White, 1977) Let $G$ be an arbitrary finite group. If the sequence $g_1,g_2,\ldots,g_k$ does not represent $e_G$, and if the group $\langle g_1,g_2, \ldots, g_k \rangle$ is not cyclic, then the sequence represents at least $2k-1$ elements of $G$.
+\end{thm}
+
+\begin{cor}\label{OlsonWhite2}
+If $G$ is a finite, noncyclic group of order $n$, then every sequence in $G$ of length $k \geq \frac{n+1}{2}$ represents $e_G$. Equivalently, for every finite noncyclic group $G$, $r(G) \leq \frac{|G|+1}{2}$.
+\end{cor}
+
+%\begin{proof}
+%
+%Suppose for $k \geq \frac{n+1}{2}$ that there is some sequence $g_1,g_2,\ldots,g_k$ that does not represent $e_G$.
+%
+%
+%\end{proof}
+
+We now have a succinct proof that $r(S_3) = 4$. The lower bound is given by the witness $(1 \; 2 \; 3),(1 \; 2 \; 3),(1 \; 2)$, while the upper bound is given by Corollary \ref{OlsonWhite2}, as $4 > \frac{7}{2} = \frac{|G|+1}{2}$ and $S_3$ is noncyclic.
+
+\section{Week 4}
+
+\subsection{Some algebraic motivation}
+ 
+While its value as a combinatorial puzzle is inherent and obvious, the Davenport constant has proved an important tool in various subfields of algebra, number theory, and geometry. The following observation, credited to Davenport in \cite{GaoGeroldingerSurvey2006}, points towards the constant's algebraic utility. Let $R$ be the ring of integers in some algebraic number field with ideal class group $G$, and let $a\in R$ be irreducible. Then, $d(G)$ denotes the maximal number of prime ideals occurring in a prime decomposition of $(a)$.
+
+\subsection{Proof of construction}
+
+We generalize the notion of multiply transitive group actions to arbitrary sets of permutations.
+
+\begin{defn}
+A set of permutations is called 
+\end{defn}
+
+\begin{lemma}
+
+\end{lemma}
+
+
+%\nocite*
+
+\bibliography{../bibliography}{}
+\bibliographystyle{plain}
+\end{document}
