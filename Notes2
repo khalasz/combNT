@@ -87,11 +87,11 @@ $|AB| \ge |A| + |B| - 1$.
 
 (iii) $|A|$ is minimum (subject to (i),(ii))
 
-Note that $|A| \le |AB|$ and $|B| \le |AB|$, so the maximum in (ii) is bounded.
+Note that $|A| \le |AB|$ and $|B| \le 2|AB|$, so the maximum in (ii) is bounded.
 
 If $A \cap B = \{1\}$, then we have $|AB| \ge |A \cup B| = |A| + |B| - 1$, a contradiction.  
 Thus, we may choose $x \in A \cap B$ with $x \neq 1$.  Now consider the sets 
-$A' = A \cap Ax^{-1}$, $B' = B \cup xB$, $A'' = A \cup Ax$, $B'' = B \cup x^{-1}B$.  It is immediate from our construction that all four of these sets contain $1$, that 
+$A' = A \cap Ax^{-1}$, $B' = B \cup xB$, $A'' = A \cup Ax$, $B'' = B \cap x^{-1}B$.  It is immediate from our construction that all four of these sets contain $1$, that 
 $A'B' \subseteq AB$, and $A''B'' \subseteq AB$.  Let $y \in A'$ and assume that  
 $y^{-1} \in B'$.  If $y^{-1} \in B$, then $y \in A$ so $y = 1$.  If $y^{-1} \in xB$, then 
 $y \in Ax^{-1}$, so we may choose $a \in A$ and $b \in B$ with $y = ax^{-1}$ and 
