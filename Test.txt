@@ -60,7 +60,7 @@
 
 \begin{document}
 \begin{abstract}
-A result of Thomassen states that for $m \geq 300$, an $m$-regular graph with a Hamiltonian cycle $C$ must contain a second Hamiltonian cycle distinct from $C$. We prove an extension of this result in the language of graph transversals. We show that if $G$ is an $m$-regular graph on $n$ vertices, with $m \geq 300$, and if we have a family $\mathcal G = \{G_1, \dots, G_n\}$ of $n$ subgraphs of $G$ with minimum degree at least $t = t(m)$, then the following holds: if $\mathcal G$ contains a transversal in the form of a Hamiltonian cycle, then there exists a function $f(m,t)$ such that $\mathcal G$ contains at least $f(m,t)$ distinct transversals in the form of a Hamiltonian cycle {\LS Do we want to say jus Hamiltonian transversal? Few lines below we say this anyway.}. We show a similar result for transversals in the form of perfect matchings. We also calculate a lower bound for the number of Hamiltonian transversals and perfect matching transversals in families of Dirac graphs---that is, graphs on $n$ vertices with minimum degree at least $n/2$.
+A result of Thomassen states that for $m \geq 300$, an $m$-regular graph with a Hamiltonian cycle $C$ must contain a second Hamiltonian cycle distinct from $C$. We prove an extension of this result in the language of graph transversals. We show that if $G$ is an $m$-regular graph on $n$ vertices, with $m \geq 300$, and if we have a family $\mathcal G = \{G_1, \dots, G_n\}$ of $n$ subgraphs of $G$ with minimum degree at least $t = t(m)$, then the following holds: if $\mathcal G$ contains a transversal in the form of a Hamiltonian cycle, then there exists a function $f(m,t)$ such that $\mathcal G$ contains at least $f(m,t)$ distinct transversals in the form of a Hamiltonian cycle {\LS Do we want to say jus Hamiltonian transversal? Few lines below we say this anyway.}{\PB I think this is a fine suggestion}. We show a similar result for transversals in the form of perfect matchings. We also calculate a lower bound for the number of Hamiltonian transversals and perfect matching transversals in families of Dirac graphs---that is, graphs on $n$ vertices with minimum degree at least $n/2$.
 
 
 
@@ -126,7 +126,11 @@ The method that we use to prove Theorem \ref{thmMain} may also be used to show t
 
 %{\KH yeah! This looks great!}
 
-When $m \geq 300$, the minimum degree {\LS We probably mean t here, right?} $T$ required in Theorem \ref{thmMain} is less than $m$. Therefore, Theorem \ref{thmThomassen} may be obtained from Theorem \ref{thmMain} by considering an $m$-regular graph $G$ and letting each graph of $\mathcal{G}$ be equal to $G$. Furthermore, in \cite{Horak}, Hor\'ak and the third author showed that in Thomassen's proof of Theorem \ref{thmThomassen}, it is not necessary for $G$ to be entirely regular and that Thomassen's method allows some gap between the minimum and maximum degree of $G$.  Theorem \ref{thmMain} also generalizes the main result of \cite{Horak}. {\LS I think there is a paper (Penny Haxel is one of authors) which push Thomassen's 300 to 73 I think. Maybe we could mention this somewhere, maybe at this place?}
+When $m \geq 300$, the minimum degree {\LS We probably mean t here, right?} {\PB Actually I don't think we need any symbol at all} $T$ required in Theorem \ref{thmMain} is less than $m$. Therefore, Theorem \ref{thmThomassen} may be obtained from Theorem \ref{thmMain} by considering an $m$-regular graph $G$ and letting each graph of $\mathcal{G}$ be equal to $G$. Furthermore, in \cite{Horak}, Hor\'ak and the third author showed that in Thomassen's proof of Theorem \ref{thmThomassen}, it is not necessary for $G$ to be entirely regular and that Thomassen's method allows some gap between the minimum and maximum degree of $G$.  Theorem \ref{thmMain} also generalizes the main result of \cite{Horak}. {\LS I think there is a paper (Penny Haxel is one of authors) which push Thomassen's 300 to 73 I think. Maybe we could mention this somewhere, maybe at this place?} {\PB We also note that Haxell, Seamone, and Verstraete \cite{Haxell} show that in Theorem \ref{thmThomassen},
+the condition that $m \geq 300$ can be replaced with 
+$m \geq 23$.}
+
+{\PB Should we give any context for this result?}
 
 For Dirac graphs (that is, graphs on $n$ vertices whose minimum degree is at least $\frac{n}{2}$), we establish an even stronger result. In \cite{JoosKim2020}, Joos and Kim prove that given a family $\mathcal G$ of $n$ Dirac graphs on a common set of $n$ vertices, $\mathcal G$ must contain a Hamiltonian transversal. By applying Thomassen's methods from \cite{ThomassenRedGreen} and \cite{Thomassen}, we strengthen the result of Joos and Kim.
 
@@ -162,15 +166,19 @@ If $\mathcal{G}$ contains a perfect matching transversal, then $\mathcal G$ cont
 
 
 
-In \cite{JoosKim2020}, Joos and Kim also show that, given a family $\mathcal G$ of $\frac{n}{2}$ Dirac graphs on a common set of {\LS I think this should be $2n$, and the previous $n/2$ should be $n$? This will etter allign with our next result.} $n$ vertices, $\mathcal G$ must contain a perfect matching transversal. By applying Thomassen's methods from \cite{ThomassenRedGreen} and \cite{Thomassen}, we strengthen this result as well.
+In \cite{JoosKim2020}, Joos and Kim also show that, given a family $\mathcal G$ of $n$ Dirac graphs on a common set of {\LS I think this should be $2n$, and the previous $n/2$ should be $n$? This will etter allign with our next result.} {\PB I agree and made this change} $2n$ vertices, $\mathcal G$ must contain a perfect matching transversal. By applying Thomassen's methods from \cite{ThomassenRedGreen} and \cite{Thomassen}, we strengthen this result as well.
 
 
 \begin{theorem}
-For every $\epsilon>0$ and every $c \geq \frac{1}{2}$, there exists an $n_0$ such that, for all $n \geq n_0$, a family $\mathcal{G} = \{G_1, \dots, G_n\}$ of subgraphs of $K_{2n}$ in which each $G_i$ has minimum degree at least $cn$ contains at least $\lfloor\frac{cn}{2+\epsilon} \rfloor !$ distinct perfect matching transversals.
+For every $\epsilon>0$ and every $c \geq 1$, there exists an $n_0$ such that, for all $n \geq n_0$, a family $\mathcal{G} = \{G_1, \dots, G_n\}$ of subgraphs of $K_{2n}$ in which each $G_i$ has minimum degree at least $cn$ contains at least $\lfloor\frac{cn}{2+\epsilon} \rfloor !$ distinct perfect matching transversals.
 \label{thmDiracPM}
 \end{theorem}
+{\PB changed to $c \geq 1$}
 
-It is worth contrasting the lower bound in Theorem \ref{thmDiracPM} to the best known upper bound for the number of perfect matching transversals. A result of Tanarenko \cite{Ta17} concerning perfect matchings in an $r$-uniform hypergraphs tells us that, in the setting of Theorem \ref{thmDiracPM}, there are fewer than $(2n)^{5n/3}$ perfect matching transversals. In contrast, we show that there are at least $\left(\frac{2}{11}n\right)^{n/3}$ perfect matching transversals. The gap between these bounds could be partially explained by the fact that Tanarenko's result describes arbitrary 3-uniform hypergraphs, whereas the hypergraphs $H(\mathcal{G})$ corresponding to our subgraph families always have an independent set on one-third of the vertices. Nonetheless, it is possible that the true number of perfect matching transversals in graph classes with bounded minimum degree is significantly larger than our 
+
+It is worth contrasting the lower bound in Theorem \ref{thmDiracPM} to the best known upper bound for the number of perfect matching transversals. A result of Tanarenko \cite{Ta17} concerning perfect matchings in an $r$-uniform hypergraphs tells us that, in the setting of Theorem \ref{thmDiracPM}, there are fewer than $(2n)^{5n/3}$
+{\PB Opinion question: do we really not want $2 + \epsilon$ to be in the denominator of the exponent?}
+perfect matching transversals. In contrast, we show that there are at least $\left(\frac{2}{11}n\right)^{n/3}$ perfect matching transversals. The gap between these bounds could be partially explained by the fact that Tanarenko's result describes arbitrary 3-uniform hypergraphs, whereas the hypergraphs $H(\mathcal{G})$ corresponding to our subgraph families always have an independent set on one-third of the vertices. Nonetheless, it is possible that the true number of perfect matching transversals in graph classes with bounded minimum degree is significantly larger than our 
 %factorial
 lower bounds. 
 
@@ -211,7 +219,7 @@ Let $Y$ be a random variable that is the sum of pairwise independent indicator v
 %The goal of this section is to  prove Theorem \ref{thmMain}.
 Throughout most of this section, we will consider a fixed graph $G$ on the vertex set $V =  \{x_1, \dots, x_n\}$ and a fixed family $\mathcal G = \{G_1, \dots, G_n\}$ of subgraphs of $G$. Throughout the following we consider indices modulo $n$, so that (for example) $x_{n+1} = x_1$ and $x_0 = x_n$.
 Our goal will be to show that under appropriate conditions, if $\mathcal G$ contains a Hamiltonian transversal, then $\mathcal{G}$ contains many distinct Hamiltonian transversals.
-So, we will assume that $\mathcal{G}$ has a fixed Hamiltonian transversal $(C,\phi)$. By reordering indices if necessary we may assume that $C = (x_1 x_2, x_2 x_3, \dots, x_{n-1}x_n, x_n x_1)$ and that for each $i \in [n]$, we have $\phi(x_i x_{i+1}) = i$. When $C$ satisfies these indexing conditions, we say that $\mathcal{G}$ is \textit{naturally indexed} with respect to $(C,\phi)$.
+So, we will assume that $\mathcal{G}$ has a fixed Hamiltonian transversal $(C,\phi)$. By reordering indices if necessary we may assume that $C = (x_1 x_2, x_2 x_3, \dots, x_{n-1}x_n, x_n x_1)$ and that for each $i \in [n]$, we have $\phi(x_i x_{i+1}) = i$. When $C$ satisfies these indexing conditions, we say that $\mathcal{G}$ is \textit{naturally indexed} with respect to $(C,\phi)$. {\LS Can we, at this point completely drop the $\phi$ and say trom now on we assume that every collection of graphs we consider is  naturally indexed with respect to $C$? I have strong feeling that our notation is unnecessary complicated (also see further comments below).}
 
 %When $\mathcal G$ is naturally indexed with respect to some Hamiltonian transversal, we simply say that $\mathcal G$ is naturally indexed.
 
@@ -225,7 +233,7 @@ So, we will assume that $\mathcal{G}$ has a fixed Hamiltonian transversal $(C,\p
     \item $H$ has a yellow arc $x_i x_j$  whenever $x_i x_j \in E(G_i)$ and $j \not \in \{i-1, i+1\}$,
     \item $H$ has a blue arc $x_i x_j$ whenever $x_i x_j \in E(G_{i-1})$ and $j \not \in \{i-1, i+1\}$.
 \end{itemize}
-More generally, we refer to any spanning subgraph of $H_{\mathcal{G},C,\phi}$ which contains all of the red edges of $H_{\mathcal{G},C,\phi}$ as an \emph{RYB-digraph} of $(\mathcal{G},C,\phi)$. 
+More generally, we refer to any spanning subgraph of $H_{\mathcal{G},C,\phi}$ which contains all of the red edges of $H_{\mathcal{G},C,\phi}$ as an \emph{RYB-digraph} of $(\mathcal{G},C,\phi)$.
  \label{defRYB}
   \end{definition}
 %
@@ -234,7 +242,7 @@ Because the graph $G$ and the family $\mathcal{G}$ remain fixed throughout most 
 Given an RYB-digraph $J \subseteq H_{C,\phi}$, we use $R(J)$, $Y(J)$, and $B(J)$ to denote, respectively, the sets of red edges, yellow arcs, and blue arcs of $J$. For a vertex $v \in V$ and any set of edges $F \subseteq \binom{V}{2}$, we use $N_{F}(v)$ to denote the set of vertices $w \in V$ such that $vw \in F$. Similarly, for any set of arcs $A \subseteq V \times V$, we use $N^+_{A}(v)$ to denote the set of vertices $w \in V$ such that $vw \in A$. 
 %We now give a condition for a graph set $\mathcal{G}$ with a Hamiltonian transversal to have a second Hamiltonian transversal, using the RYB digraph of $\mathcal{G}$. 
 %In a digraph $H$ with bidirectional edges colored red and arcs colored yellow and blue, 
-We say that a set $S \subseteq V$ is \emph{red-independent} with respect to $(C,\phi)$ if no two vertices in $S$ are adjacent by an edge in $R(H_{C,\phi})$. Notice that, because $R(J) = R(H_{C,\phi})$ for all RYB-digraphs of $(C,\phi)$, the notion of red-independence does not depend on any specific $J$. We say that a nonempty set $S \subseteq V$ is \emph{locally $J$-dominating} {\LS I have feeling that this name should also include $S$ but I do not have a good name for this.} if for every vertex $x_i \in S$, the sets $N^+_{Y(J)}(x_{i-1}) \cap S$ and $N^+_{B(J)}(x_{i+1}) \cap S$ are nonempty, omitting the prefix $J$ when it is clear from context. An example of a red-independent locally dominating set in an RYB-digraph is given in Figure \ref{figJ}. 
+We say that a set $S \subseteq V$ is \emph{red-independent} with respect to $(C,\phi)$ if no two vertices in $S$ are adjacent by an edge in $R(H_{C,\phi})$. Notice that, because $R(J) = R(H_{C,\phi})$ for all RYB-digraphs of $(C,\phi)$, the notion of red-independence does not depend on any specific $J$. We say that a nonempty set $S \subseteq V$ is \emph{locally $J$-dominating} {\LS I have feeling that this name should also include $S$ but I do not have a good name for this.} {\PB My opinion is that since this is a property of $S$, the name doesn't need to include $S$} if for every vertex $x_i \in S$, the sets $N^+_{Y(J)}(x_{i-1}) \cap S$ and $N^+_{B(J)}(x_{i+1}) \cap S$ are nonempty, omitting the prefix $J$ when it is clear from context. An example of a red-independent locally dominating set in an RYB-digraph is given in Figure \ref{figJ}. 
 
 \begin{figure}[t]
 
@@ -306,7 +314,7 @@ We say that a set $S \subseteq V$ is \emph{red-independent} with respect to $(C,
 
 
 
-Our first result gives sufficient conditions for the existence of a second Hamiltonian transversal in a graph family that already contains a Hamiltonian transversal. Given a red-independent set $S \subseteq V$, write $\Omega(C,\phi,S)$ for the set of Hamiltonian transversals $(C', \psi)$ such that $C'$ contains all $|S|$ of the paths induced by $C$ on the vertices $V \setminus S$ {\LS is not his always the case?}, and such that for all $e \in C \cap C'$ we have $\phi(e) = \psi(e)$, and for all $v \in N_{C}(S)$ the edge $e$ joining $v$ to $S$ in $C$ and the edge $e'$ joining $v$ to $S$ in $C'$ satisfy $\phi(e) = \psi(e')$. 
+Our first result gives sufficient conditions for the existence of a second Hamiltonian transversal in a graph family that already contains a Hamiltonian transversal. Given a red-independent set $S \subseteq V$, write $\Omega(C,\phi,S)$ for the set of Hamiltonian transversals $(C', \psi)$ such that $C'$ contains all $|S|$ of the paths induced by $C$ on the vertices $V \setminus S$ {\LS is not his always the case?} {\PB This is always the case for the transversals that we get with our method; however, there might be other transversals that don't satisfy this property, and it will mess up our notation later if we don't exclude them}, and such that for all $e \in C \cap C'$ we have $\phi(e) = \psi(e)$, and for all $v \in N_{C}(S)$ the edge $e$ joining $v$ to $S$ in $C$ and the edge $e'$ joining $v$ to $S$ in $C'$ satisfy $\phi(e) = \psi(e')$. 
 
 \begin{lemma}\label{lemmaIndDom}
 Let $J$ be an RYB-digraph of $(C,\phi)$. If there exists a nonempty set $S \subseteq V$ that is red-independent and locally $J$-dominating, then $\Omega(C,\phi,S)$ contains a second Hamiltonian transversal, distinct from $(C,\phi)$, comprised of edges in $E(\overline{J}) \cap E(G)$.%$C$ and edges underlying yellow or blue arcs in $J$.
@@ -314,9 +322,9 @@ Let $J$ be an RYB-digraph of $(C,\phi)$. If there exists a nonempty set $S \subs
 \end{lemma}
 \begin{proof}
 By permuting the indices of $x_1, \dots, x_n$, we may assume that $\mathcal{G}$ is naturally indexed with respect to $(C,\phi)$ and that $x_1 \in S$. We will find a second Hamiltonian transversal in $\Omega(C,\phi,S)$ which uses only edges underlying a subgraph $J^\prime \subseteq J$
-satisfying $E(\overline{J^\prime}) \subseteq E(\overline{J}) \cap E(G)$. To obtain $J'$, first remove all edges in $R(J) \setminus C$. Then, remove yellow and blue arcs until the only yellow and blue arcs in $J^\prime$ consist of, for each $x_i \in S$, {\LS My English is not so good, but I have a feeling that the previous part of the sentence is not correct English? :) I know what we want to say.} exactly one yellow arc joining $x_{i-1}$ to $S$ and exactly one blue arc joining $x_{i+1}$ to $S$ (such arcs must exist in $J^\prime$ by the hypothesis that $S$ is locally-dominating). This means that for every $v \in V \setminus S$, if $v$ is adjacent in $C$ to a vertex in $S$, then $v$ has degree 3 in $\overline{J^\prime}$, and otherwise $v$ has degree 2 in $\overline{J^\prime}$.
+satisfying $E(\overline{J^\prime}) \subseteq E(\overline{J}) \cap E(G)$. To obtain $J'$, first remove all edges in $R(J) \setminus C$. Then, remove yellow and blue arcs until the only yellow and blue arcs in $J^\prime$ consist of, for each $x_i \in S$, {\LS My English is not so good, but I have a feeling that the previous part of the sentence is not correct English? :) I know what we want to say.} {\PB I think it's grammatically correct, even though it doesn't sound very pretty; but I can't think of a clearer way to express this idea, and I don't think any expression will sound that good, since it's a complex idea} exactly one yellow arc joining $x_{i-1}$ to $S$ and exactly one blue arc joining $x_{i+1}$ to $S$ (such arcs must exist in $J^\prime$ by the hypothesis that $S$ is locally-dominating). This means that for every $v \in V \setminus S$, if $v$ is adjacent in $C$ to a vertex in $S$, then $v$ has degree 3 in $\overline{J^\prime}$, and otherwise $v$ has degree 2 in $\overline{J^\prime}$.
 
-Our first aim is to show that $\overline{J^\prime}$ contains at least two Hamiltonian cycles. To this end, we define an auxiliary graph $A$ whose vertex set is the set of Hamiltonian paths in $\overline{J^\prime}$ beginning with the edge $x_1 x_2$. We define adjacency in $A$ as in Thomason's lollipop argument (introduced in \cite{Thomason}): let $P = (x_1, x_2, v_3, \dots, v_n)$ be adjacent to $P' = (x_1, x_2, v_3, \dots, v_{j-1}, v_j, v_n, v_{n-1}, \dots, v_{j+1})$ whenever $v_jv_n \in E(\overline{J^\prime})$. Observe that the induced subgraph of $\overline{J^\prime}$ on the vertices $V \setminus S$ consists of exactly $s:= |S|$ paths $P_1 \dots, P_s$, so that every Hamiltonian path  in $\overline{J^\prime}$ beginning with the edge $x_1 x_2$ has the form {\LS Would it be better to rename $P_i$ to $C_i$? It may confure the reader with $P$ and $P'$.}
+Our first aim is to show that $\overline{J^\prime}$ contains at least two Hamiltonian cycles. To this end, we define an auxiliary graph $A$ whose vertex set is the set of Hamiltonian paths in $\overline{J^\prime}$ beginning with the edge $x_1 x_2$. We define adjacency in $A$ as in Thomason's lollipop argument (introduced in \cite{Thomason}): let $P = (x_1, x_2, v_3, \dots, v_n)$ be adjacent to $P' = (x_1, x_2, v_3, \dots, v_{j-1}, v_j, v_n, v_{n-1}, \dots, v_{j+1})$ whenever $v_jv_n \in E(\overline{J^\prime})$. Observe that the induced subgraph of $\overline{J^\prime}$ on the vertices $V \setminus S$ consists of exactly $s:= |S|$ paths $P_1 \dots, P_s$, so that every Hamiltonian path  in $\overline{J^\prime}$ beginning with the edge $x_1 x_2$ has the form {\LS Would it be better to rename $P_i$ to $C_i$? It may confure the reader with $P$ and $P'$.} {\PB I'm okay with this suggestion}
 %
 \begin{equation}x_1, P_{1}, x_{j_1}, P_{i_1}, \ldots,x_{j_{s-1}}, P_{i_{s-1}},
 \label{eq:hampathform}
@@ -334,7 +342,7 @@ It now suffices to define a valid bijection $\phi^\ast:E(C^\ast) \rightarrow [n]
     \item if $x_ix_j \in Y(J^\prime)$, then set $\psi(x_ix_j) := i$, and
     \item  if $x_i x_j \in B(J^\prime)$, then set $\psi(x_i x_j) := i-1$.
 \end{itemize} 
-{\LS So far, I do not think we need to work with digraph. Is there actually a need for directed edges? So far I do not think so. The fact that yellow and blue blue edges will be taken in the correct direction in any Hamiltonian cycle follows from the construction of the graph.}
+{\LS So far, I do not think we need to work with digraph. Is there actually a need for directed edges? {\PB I think so} So far I do not think so. The fact that yellow and blue blue edges will be taken in the correct direction in any Hamiltonian cycle follows from the construction of the graph.} {\PB I think we talked about this at the meeting, and we need directions}
 Observe that this definition satisfies $\phi(e) = \psi(e)$ for all $e \in C \cap Q^\ast$ and that, for all $v \in N_{C}(S)\setminus \{y_n\}$, the edge $e$ joining $v$ to $S$ in $C$ and the edge $e'$ joining $v$ to $S$ in $Q^\ast$ satisfy $\phi(e) = \psi(e')$. 
  Moreover, it follows directly from Definition \ref{defRYB} that $e \in G_{\psi(e)}$ for each $e \in E(Q^\ast)$.
  
@@ -448,7 +456,7 @@ It is worth clearly noting a couple of easily verified properties of Hamiltonian
 For every $(C',\psi) \in \Omega(C,\phi,S)$
 \begin{enumerate}[(a)]
 \item if $e \in C$ is not incident to a vertex of $S$, then $e$ belongs to $C'$, and
-\item the vertices of $S$ are at a mutual distance of at least $3$ in $C'$. {\LS Is this true? Some $P_i$ can have just one internal vertex, then the two red vertices have distance two.}
+\item the vertices of $S$ are at a mutual distance of at least $3$ in $C'$. {\LS Is this true? Some $P_i$ can have just one internal vertex, then the two red vertices have distance two.} {\PB They can have red distance two in Thomassen but not here, since our $P_i$ must have at least two vertices. We made this change because it makes the proof of this technique much simpler and doesn't really hurt our asymptotic results.} {\PB That reminds me, maybe we should point out that we don't actually need distance 3 and that distance 2 is okay, but we use distance 3 for simplicity}
 \end{enumerate}
 \end{remark}
 
@@ -457,14 +465,15 @@ For every $(C',\psi) \in \Omega(C,\phi,S)$
 Assuming $\mathcal G$ is naturally indexed with respect to $(C,\phi)$, for every red-independent set $S \subseteq V$  %For each vertex $v \in V(H)$ and each set $S \subseteq V(H)$, let 
  we define
 $$d_{C,\phi}^*(S) := \min_{x_i \in S}\{|N^+_{Y(H_{C,\phi})}(x_{i-1}) \cap S|,|N^+_{B(H_{C,\phi})}(x_{i+1}) \cap S|\}.$$ 
+{\LS We know all yellow (blue) edges incident to $x_{i-1}$ ($x_{i+1}$) have the other end in $S$, also they are all outgoing from these two vertices (which I say we do not need directions?), so we should be able to simplify the definition }
 %Notice that $d^*_H(S) \geq 1$ if and only if $S$ is locally $H$-dominating. 
-Notice that here we are taking the minimum over $2|S|$ different values. We claim that, for every Hamiltonian transversal $(C',\psi) \in \Omega(C,\phi,S)$,
+Notice that here we are taking the minimum over $2|S|$ different values. We claim that, for every Hamiltonian transversal $(C',\psi) \in \Omega(C,\phi,S)$, 
 %
 \begin{equation}
 d^\ast_{C,\phi}(S) = d^\ast_{C',\psi}(S).
 \label{eq:dinvariant}\end{equation}
 %
-Indeed, given $x_i \in S$, we know by Remark \ref{remark:stayyy} that {\LS This is using the part (b)}  $x_{i-2}x_{i-1} \in C'$. Let $v \in S$ denote the other neighbor of $x_{i-1}$ in $C'$. Notice that we could have $v = x_i$ and, if not, we have $x_{i-1}v \in Y(H_{C,\phi})$ and $x_{i-1}x_i \in Y(H_{C'})$. This means that the set of vertices in $S$ which are joined to $x_{i-1}$ by an edge in $G_{i-1}$ {\LS I would remind the reader what $G_{i-1}$ is.} can be expressed in two ways: as $(N^+_{Y(H_{C,\phi})}(x_{i-1}) \cap S) \cup \{x_i\} $ and as  $(N^+_{Y(H_{C',\psi})}(x_{i-1}) \cap S) \cup \{v\} $. We may then conclude that $|N^+_{Y(H_{C,\phi})}(x_{i-1}) \cap S| = |N^+_{Y(H_{C',\psi})}(x_{i-1}) \cap S|$. The claim then follows from the essentially identical argument that $|N^+_{B(H_{C,\phi})}(x_{i+1}) \cap S| = |N^+_{B(H_{C',\psi})}(x_{i+1}) \cap S|$.
+Indeed, given $x_i \in S$, we know by Remark \ref{remark:stayyy} that  $x_{i-2}x_{i-1} \in C'$. Let $v \in S$ denote the other neighbor of $x_{i-1}$ in $C'$. Notice that either $v = x_i$, or we have $x_{i-1}v \in Y(H_{C,\phi})$ and $x_{i-1}x_i \in Y(H_{C',\psi})$. This means that the set of vertices in $S$ which are joined to $x_{i-1}$ by an edge in $G_{i-1}$ can be expressed in two ways: as $(N^+_{Y(H_{C,\phi})}(x_{i-1}) \cap S) \cup \{x_i\} $ and as  $(N^+_{Y(H_{C',\psi})}(x_{i-1}) \cap S) \cup \{v\} $. We may then conclude that $|N^+_{Y(H_{C,\phi})}(x_{i-1}) \cap S| = |N^+_{Y(H_{C',\psi})}(x_{i-1}) \cap S|$. The claim then follows from the essentially identical argument that $|N^+_{B(H_{C,\phi})}(x_{i+1}) \cap S| = |N^+_{B(H_{C',\psi})}(x_{i+1}) \cap S|$.
 
 We are now ready to prove our main technical result. 
 
@@ -488,7 +497,7 @@ We prove this result by induction on $d$. Notice that the case $d=1$ follows dir
 
 
 
-Assuming $d \geq 2$, we claim that there exists a vertex $v_0 \in N_C(S)$, say $v_0s_0 \in C$, for which the following property holds:
+Assuming $d \geq 2$, we claim that there exists a vertex $v_0 \in N_C(S)$ for which the following property holds. Suppose $s_0\in S$ so that $v_0s_0 \in E(C)$.
 \begin{equation}\label{eqmanycond}
    \text{Every edge in $E(G_{\phi(v_0 s_0)}) $ joining $v_0$ to $S$ belongs to a Hamiltonian transversal in $\Omega(C,\phi,S)$.} 
 \end{equation} 
@@ -500,13 +509,13 @@ and choose
 an edge $vw = e_v \in E(G_{\phi(vs_v)}) $ such that $w \in S$ and 
 %and let $B$ denote the set of these edges $e_w$. If the claim does not hold, then we must be able to choose $B$ such that no edge $e_w$
 $e_v$ is not in any Hamiltonian transversal of $\Omega(C,\phi,S)$. 
-Letting $F := \{e_v \,:\, v \in N_C(S)\}$, notice that the definition of $e_v$ implies $F \cap C = \emptyset$. Consider the RYB-digraph $J$ comprised of the red edges in $H_{C,\phi}$ together with yellow and blue arcs corresponding to the edges in $F$. Observe that $J$ has been constructed so that $S$ is locally $J$-dominating. Lemma \ref{lemmaIndDom} then tell us that there is a Hamiltonian transversal $C' \in \Omega(C,\phi,S)$, distinct from $C$, such that $E(C') \subseteq E(\overline{J}) \cap E(G)$.  But $F = (E(\overline{J}) \cap E(G)) \setminus E(C)$, so the fact that $C' \neq C$ implies $C$ must use an edge in $F$, contradicting the definition of $F$ as comprised of edges contained in no element of $\Omega(C,\phi,S)$. This proves the claim.
+Letting $F := \{e_v \,:\, v \in N_C(S)\}$, notice that the definition of $e_v$ implies $F \cap C = \emptyset$. Consider the RYB-digraph $J$ comprised of the red edges in $H_{C,\phi}$ together with yellow and blue arcs corresponding to the edges in $F$. {\LS Not sure if we want to make this comment here: Notice that if $s_v$ is the successor of $v$ along $C$ then the edge $e_v$ is yellow, otherwise it is blue.} {\PB I think this is a fine comment} Observe that $J$ has been constructed so that $S$ is locally $J$-dominating. Lemma \ref{lemmaIndDom} then tell us that there is a Hamiltonian transversal $C' \in \Omega(C,\phi,S)$, distinct from $C$, such that $E(C') \subseteq E(\overline{J}) \cap E(G)$.  But $F = (E(\overline{J}) \cap E(G)) \setminus E(C)$, so the fact that $C' \neq C$ implies $C$ must use an edge in $F$, contradicting the definition of $F$ as comprised of edges contained in no element of $\Omega(C,\phi,S)$. This proves the claim.
 
 %We may use the lollipop argument of Lemma \ref{lemmaIndDom} to find a Hamiltonian transversal, say $C' \subseteq C \cup B$, which is distinct from $C$. Here, the auxiliary graph $A$ has as vertices the Hamiltonian paths in $H[C \cup B]$ which begin with some edge $su \in C$ for which $s \in S$. As $H[C \cup B] \setminus S$ consists of $|S|$ disjoint paths in which each endpoint has degree 3 in $H[C \cup B]$, and the edges $e_v \in B$ are defined specifically to 
 %
 %Now, $C'$ being distinct from $C$ while $C' \subseteq C \cup B$ implies that $C'$ uses at least one edge of $B$, contradicting the definition of $B$. We therefore conclude that there exists a vertex $v_0 \in V(H)$ that neighbors a vertex $s \in S $ in the cycle $C$ such that every edge $e \in E(G_{\phi(v_0s)}) \setminus C$ which connects  $v$ to $S \setminus (V(Q) \cup \{s\})$ belongs to some Hamiltonian transversal.
 
- Let  $v_0 \in V \setminus S$ denote a vertex, adjacent in $C$ to $s_0 \in S$, satisfying \eqref{eqmanycond}. Fix an edge $e \in G_{\phi(v_0 s_0)}$ and let  $(C',\psi)$ denote the Hamiltonian transversal in $\Omega(C,\phi,S)$ containing $e$ guaranteed to exist by the claim in the previous paragraph. Denote by $s_1$ the unique vertex in $S$ incident to $v_0$ in $C'$ and let $S' = S \setminus \{s_1\}$. To apply induction to $S'$, we must show that $d_{C',\psi}^\ast(S') \geq d-1$. Indeed, we know from  \eqref{eq:dinvariant} that $d_{C',\psi}^\ast(S) \geq d$, while for each $x \in N_C(S)$ we have 
+ Let  $v_0 \in V \setminus S$ denote a vertex, adjacent in $C$ to $s_0 \in S$, satisfying \eqref{eqmanycond}. Fix an edge $e \in G_{\phi(v_0 s_0)}$ {\LS , different from $v_0s_0$,} {\PB But we want to have $v_0 s_0$ as one of our choices} and let  $(C',\psi)$ denote the Hamiltonian transversal in $\Omega(C,\phi,S)$ containing $e$ guaranteed to exist by the claim in the previous paragraph. Denote by $s_1$ the unique vertex in $S$ incident to $v_0$ in $C'$ and let $S' = S \setminus \{s_1\}$. To apply induction to $S'$ {\LS I would be more precise here, because the induction is applied to $S'$ along with $C'$ and $\psi$, maybe we say that?} {\PB I think this is a good suggestion}, we must show that $d_{C',\psi}^\ast(S') \geq d-1$. Indeed, we know from  \eqref{eq:dinvariant} that $d_{C',\psi}^\ast(S) \geq d$, while for each $x \in N_C(S)$ we have 
  %
  $$N^+_{Y(H_{C',\psi})}(x) \cap S \subseteq (N^+_{Y(H_{C',\psi})}(x) \cap S') \cup \{s_1\} \text{ and }N^+_{B(H_{C',\psi})}(x) \cap S \subseteq (N^+_{B(H_{C',\psi})}(x) \cap S') \cup \{s_1\}.$$  
 %
@@ -523,7 +532,7 @@ This gives us a total of at least $(d+1) \cdot d! = (d+1)!$ distinct Hamiltonian
 %
 %Finally, letting $q = 0$ completes the proof.
 \end{proof}
-
+{\LS Now, that I clarified notation, this is actually very nicely written :) The only thing is that I needed to draw a figure to better follow these concepts and constructions. It is easy to draw and only one was enough, so I am not sure whether we want to add one or reader may draw one by themselves?}
 %\begin{theorem}
 %Let $S \subseteq V(H)$ be a red-independent set. Suppose that for each vertex $v \in V(H) \setminus S$, $d^*_H(v,S) \geq d$. Then $\mathcal G$ contains at least $(d + 1)!$ distinct perfect matching transversals.
 %\label{thmFactorialCycles}
@@ -570,7 +579,7 @@ Let $H=H_{C,\phi}$ and let $m$ and $r$ be positive integers satisfying $m \geq 2
 then there exists a red-independent set $S \subseteq V$ %that is red-independent %, yellow-dominating, and blue-dominating.
 satisfying
 %
-$d_{C,\phi}^*(S) \geq  \frac{r}{400}\sqrt{\frac{\log m}{m}}.$
+$d_{C,\phi}^*(S) \geq  \frac{r}{400}\sqrt{\frac{\log m}{m}}.$ {\LS Should we have 800 in the denominator instead of 400? See below.}
 \label{LLLresult}
 \end{theorem}
 
@@ -605,16 +614,17 @@ Notice that if no $x$-event and no $y$-event occurs, then $S$ is a non-empty red
 
 %{\PB Yes, each $y$ event is dependent with $4m + 4$ $x$ events, because there are $m+1$ vertices involved, and each can have 4 red edges sticking out}
 
+{\LS I have not checked the above estimates.}
 
 Each $y$-event corresponds to a monochromatic star $T$ in $H$ in which each arc directed away from a ``center'' vertex. Because $G$ has maximum degree $m$ and, by Definition \ref{defRYB}, neither of the red edges in $E(H) \cap E(G)$ incident to a vertex $v \in V$ can underlie a blue or yellow arc, so each $y$-event is uniquely determined by a color (either blue or yellow) and a vertex (corresponding to the center of $T$).
 
 
-To apply the local lemma, we count the dependencies between each of our events. First, consider an $x$-event $A_e$. Because each vertex is incident to four red edges, $A_e$ is dependent with at most $6$ other $x$-events. Moreover, the star $T$ corresponding to any $y$-event dependent with $A_e$ must contain one of the endpoints of $e$. We have two choices for the color of $T$ and, for each color, at most $2(m-1)$ choices for its center. Thus, the number of $y$-events dependent with $A_e$ is at most $4m-4$. 
+To apply the local lemma, we count the dependencies between each of our events. First, consider an $x$-event $A_e$. Because each vertex is incident to four {\LS should this be two red edges?} {\PB Remember we added the ``distance 2" red edges to keep $S$ at mutual distance at least 3. Maybe we can remind the reader of this} red edges, $A_e$ is dependent with at most $6$ {\LS I think this is 2} other $x$-events. Moreover, the star $T$ corresponding to any $y$-event dependent with $A_e$ must contain one of the endpoints of $e$. We have two choices for the color of $T$ and, for each color, at most $2(m-1)$ {\LS I think this is 2(m+1)} choices for its center. Thus, the number of $y$-events dependent with $A_e$ is at most $4m-4$ {\LS I think this is 4m+4}. 
 
 
 
 Next, consider a $y$-event $A_v$ and let $T_0$ denote the corresponding yellow star. Any $x$-event dependent with $A_v$ must correspond to a red edge incident to a vertex in $T_0$, so $A_v$ depends on at most $4(m-1)$ $x$-events. If $T$ is the star corresponding to a $y$-event dependent with $A_v$ then $V(T) \cap V(T_0) \neq \emptyset$.  As both $T$ and $T_0$ have at most $m-1$ vertices, we have at most $(m-1)^2$ choices for the center of $T$. Because we have two choices for the color of $T$, we see that $A_v$ is dependent with at most $2(m-1)^2$ $y$-events. Similarly, every $y$-event of the form $A_v'$ is dependent with at most $4m-4$ $x$-events and at most $2(m-1)^2$ $y$-events. 
-
+{\LS We can go over these estimates when we meet.}
 
 
 %Observe that, for each $e \in R(H)$, the event $A_e$ is codependent with at most $6$ other $x$-events. Moreover, by Definition \ref{defRYB}, each vertex in $H$ is adjacent to at most $m-2$ other vertices via yellow arcs and at most $m-2$ other vertices blue arcs (ignoring arc directions). This tells us that each $A_e$ is codependent with at most $4m-4$ $y$-events (one for each vertex incident to $e$ and one for each yellow or blue neighbor of these vertices). Furthermore, for each $v \in V$, $A_v$ and $A_v'$ are each codependent with at most $4m-4$ $x$-events and at most $2(m-1)^2$ other $y$-events {\PB todo: explain more, say something about stars intersecting}. 
@@ -622,7 +632,7 @@ Next, consider a $y$-event $A_v$ and let $T_0$ denote the corresponding yellow s
 Therefore, if we assign a real number $x$ to all $x$-events and a real number $y$ to all $y$-events, then Theorem \ref{LLL} tells us that the following pair of inequalities imply that with positive probability no $x$-event occurs and no $y$-event occurs:
 \begin{eqnarray}
 \label{firstIn}
-0 &<& x (1-x)^{6}(1-y)^{4m-4}-p^2; \\
+0 &<& x (1-x)^{6}(1-y)^{4m-4}-p^2; {\LS \text{maybe it is better to leave $p^2$ on the left?}} \\
 \label{secondIn}
 \xi^{pr}& <& y(1-x)^{4m-4}(1-y)^{2(m-1)^2}.
 \end{eqnarray}
@@ -642,7 +652,7 @@ from above. Indeed, one may check that this equation holds for all $m\geq194$.
 %By substituting the value $p = \frac{1}{2}\sqrt{\frac{\log m}{m}}$, this inequality is equivalent to 
 %$$t > 2 + (8 + \epsilon ) \sqrt{ m \log m} + (4 + \epsilon) \sqrt { \frac{m}{\log m}},$$ {\PB I should check this, but I think it's finally right}
 %which is exactly what we have assumed in our hypothesis for $t$. Therefore, (\ref{secondIn}) holds as well, and 
-Therefore, if $m \geq 262$, then we avoid all bad events with positive probability, and hence there must exist a red-independent set $S \subseteq V$  for which $d_{C,\phi}^*(S) \geq \frac{r}{400}\sqrt{\frac{\log m}{m}}$.
+Therefore, if $m \geq 262$, then we avoid all bad events with positive probability, and hence there must exist a red-independent set $S \subseteq V$  for which $d_{C,\phi}^*(S) \geq \frac{r}{400}\sqrt{\frac{\log m}{m}}$. {\LS This all looks good but I was not checking the calculations.}
 \end{proof}
 
 
@@ -677,7 +687,7 @@ Let $C$ be a Hamiltonian transversal of $\mathcal{G}$ and assume without loss of
 %In \cite{JoosKim2020}, Joos and Kim show that every family $\mathcal{G} = \{G_1, \dots, G_n\}$ of subgraphs of $K_n$ in which each graph $G_i \in \mathcal{G}$ has minimum degree at least $n/2$, has a Hamiltonian transversal. In this section, we will show that under these conditions, $\mathcal G$ contains not just one Hamiltonian transversal, but in fact at least $\lceil\left (\frac{1}{32} - o(1) \right ) n \rceil !$ distinct Hamiltonian transversals.
 
 
-For the rest of this section we let $\mathcal G = \{G_1, \dots, G_n\}$ denote a family of subgraphs of $K_n$ in which each graph $G_i \in \mathcal{G}$ has minimum degree at least $n/2$. In \cite{JoosKim2020}, Joos and Kim show that every such family has a Hamiltonian transversal. For the rest of this section, let $(C,\phi)$ denote a fixed Hamiltonian transversal, whose existence is given by Theorem 1 of \cite{JoosKim2020}, and let $H:=H_{\mathcal{G},C,\phi}$. Notice that this is precisely the setting of Theorem \ref{thmDiracHam}.  Our proof of this theorem relies heavily upon Theorem \ref{thmHamOut}, with the remaining difficult work being the following probabilistic proof that we can find a vertex set satisfying the hypotheses of that theorem. 
+For the rest of this section we let $\mathcal G = \{G_1, \dots, G_n\}$ denote a family of subgraphs of $K_n$ in which each graph $G_i \in \mathcal{G}$ has minimum degree at least $n/2$. In \cite{JoosKim2020}, Joos and Kim show that every such family has a Hamiltonian transversal. For the rest of this section, let $(C,\phi)$ denote a fixed Hamiltonian transversal, whose existence is given by Theorem 1 of \cite{JoosKim2020}, and let $H:=H_{\mathcal{G},C,\phi}$. Notice that this is precisely the setting of Theorem \ref{thmDiracHam}.  Our proof of this theorem relies heavily upon Theorem \ref{thmHamOut}, with the remaining work being the following probabilistic proof that we can find a vertex set satisfying the hypotheses of that theorem. 
 
 
 %\begin{definition}
@@ -728,7 +738,7 @@ Theorem \ref{thmDiracHam}. For any $\epsilon>0$, we may use Lemma \ref{lemmaInS}
 $\left\lceil \frac{c^2 n}{16+\epsilon}  \right\rceil!$
 Hamiltonian transversals 
 then follows by Theorem \ref{thmHamOut}.
-
+{\LS Nice.}
 
 %\subsection{A minimum degree condition for a second Hamiltonian transversal}
 %We end this section by further exploring the case $G=K_n$. In particular, we establish a lower bound on the minimum degree of each $G_i \subseteq K_n$ which ensures that a family $\mathcal{G}=\{G_1,G_2,\ldots,G_n\}$ which contains a Hamiltonian transversal in fact contains at least two Hamiltonian transversals. 
@@ -812,7 +822,7 @@ As we will treat $\mathcal{G}$ as fixed throughout most of this section, we will
 
 \subsection{Technical conditions} 
 
-As in the previous section, we begin with a technical condition which guarantees the existence of two perfect matching transversals. In this case, however, the condition will be much easier to establish. Given a maximal red-independent set $S$, let $\Omega(M,\phi,S)$ denote the set of perfect matching transversals $(M',\psi)$ such that all edges in  $M'$ have one endpoint in $S$ and one endpoint in $V \setminus S$ and, for each $v \in S$, the edge $e$ in $M$ incident to $v$ and the edge $e'$ in $M'$ incident to $v$ satisfy $\phi(e) = \psi(e')$. Notice that, because $S$ is maximal, we have $|S|=|V \setminus S| = n$.
+As in the previous section, we begin with a technical condition which guarantees the existence of two perfect matching transversals. In this case, however, the condition will be much easier to establish. Given a maximal red-independent set $S$, let $\Omega(M,\phi,S)$ denote the set of perfect matching transversals $(M',\psi)$ such that all edges in  $M'$ have one endpoint in $S$ and one endpoint in $V \setminus S$ and, for each $v \in S$, the edge $e$ in $M$ incident to $v$ and the edge $e'$ in $M'$ incident to $v$ satisfy $\phi(e) = \psi(e')$. Notice that, because $S$ is maximal, we have $|S|=|V \setminus S| = n$. {\LS Maybe a figure would be good here?}
 
 \begin{lemma}
 \label{lemmaPMcond}
@@ -826,6 +836,7 @@ The work of this proof amounts to finding an even directed cycle $C$ in $J$ that
 To find $C$, we construct a bipartite digraph $P\subseteq J$ one edge at a time; our goal is to find $C$ as a subgraph of $P$. We begin by choosing an arbitrary red edge $u_0v_0$ with $v_0 \in S$ and add $u_0v_0$ to $P$. In general, each time a red edge $uv$, with $v \in S$, is added to $P$, we then add a blue arc $vw$ with $w \not \in S$ to $P$. Notice that such an arc is guaranteed to exist by the hypothesis that each $v\in S$ has a blue out-neighbor outside of $S$. If the red edge incident to $w$ has already been added to $P$, then $P$ must contain an even cycle that alternates between red edges and blue edges. Otherwise, add to $P$ the red edge incident to $w$ and return to the previous step. As $J$ is a finite graph, this process must ultimately terminate, and hence we will eventually find an even cycle $C$ in $J$ that alternates between red edges and blue edges.
 %
 \end{proof}
+{\LS Clear argument!}
 
 %\begin{remark}
 %In the proof of Lemma \ref{lemmaPMcond}, we show that if each vertex $v \in S$ in the RB-graph $H$ has at least one blue out-neighbor $w \not \in S$, then there exists a second perfect matching transversal over $\mathcal G$. By using the same approach, we may show that given a set $Q \subseteq M$, there exists a second perfect matching transversal over $\mathcal G$ containing each edge of $Q$ provided that each vertex $v \in S \setminus V(Q)$ has an out-neighbor $w \not \in S \cup V(Q)$ via a blue arc.
@@ -850,8 +861,7 @@ We claim that, for every $(M',\psi) \in \Omega(M,\phi,S)$, we have
 \end{equation}
 %
 %
-Indeed, let $C$ denote the symmetric difference of $M$ and $M'$ and observe that $C$ is a collection of even cycles alternating between edges of $M$ and edges of $M'$. Letting $H'=H_{M',\psi}$, we want to show that $|N^+_{B(H)}(v) \setminus S| = |N^+_{B(H')}(v) \setminus S|$ for every $v \in V(C) \cap S$. Given such a vertex $v$, the red edge incident to $v$ in $H$, say $vu$, becomes a blue arc pointing away from $v$ in $H'$. Similarly, the blue arc pointing out of $v$ in $C$, say $vw$, becomes a red edge in $H'$. Notice that $w \not\in S$ by construction and, because $v \in S$, $uv \in R(H)$, and $S$ is red-independent, $u \not\in S$. So, in passing from $H$ to $H'$, $v$ loses exactly one blue out-neighbor in $V \setminus S$, namely $w$, while gaining one exactly one blue out-neighbor in $V \setminus S$, namely $u$.
-
+Indeed, let $C$ denote the symmetric difference of $M$ and $M'$ and observe that $C$ is a collection of even cycles alternating between edges of $M$ and edges of $M'$. Letting $H'=H_{M',\psi}$, we want to show that $|N^+_{B(H)}(v) \setminus S| = |N^+_{B(H')}(v) \setminus S|$ for every $v \in V(C) \cap S$. Given such a vertex $v$, the red edge incident to $v$ in $H$, say $vu$, becomes a blue arc pointing away from $v$ in $H'$. Similarly, the blue arc pointing out of $v$ in $C$, say $vw$, becomes a red edge in $H'$. Notice that $w \not\in S$ by construction and, because $v \in S$, $uv \in R(H)$, and $S$ is red-independent, $u \not\in S$. So, in passing from $H$ to $H'$, $v$ loses exactly one blue out-neighbor in $V \setminus S$, namely $w$, while gaining exactly one blue out-neighbor in $V \setminus S$, namely $u$.
 %\begin{lemma}
 %Given a perfect matching transversal $M$ and an edge set $Q \subseteq M$, if the cycle $C$ used to obtain $M' = \sigma_M(S,Q)$ satisfies $C \cap Q = \emptyset$, then every vertex $v \in S \setminus V(Q)$ satisfies 
 %
@@ -866,7 +876,7 @@ Indeed, let $C$ denote the symmetric difference of $M$ and $M'$ and observe that
 %\end{proof}
 
 The astute reader may notice that, following the structure of Section \ref{secHam}, we are now set to establish an analogue of Theorem \ref{thmHamOut} for perfect matching transversals. 
-
+{\LS All clear!}
 
 \begin{theorem}
 Let $S \subseteq V$ be a maximal red-independent set. If  $d_{M,\phi}^\times(S) \geq d$, then $\mathcal G$ contains at least $(d + 1)!$ distinct perfect matching transversals.
@@ -875,15 +885,15 @@ Let $S \subseteq V$ be a maximal red-independent set. If  $d_{M,\phi}^\times(S) 
 \begin{proof}
 We prove this result by induction on $n = |M|$. Notice that the case $n=1$ trivially holds.
 
-In the case $n \geq 2$, we claim that there exists a vertex $v_0 \in S$ such every blue arc $v_0w$, where $w \not \in S$, belongs to a perfect matching transversal in $\Omega(M,\phi,S)$. Indeed, suppose for the sake of contradiction that for each vertex $x \in S$, there exists a blue arc $xy$ in $H=H_{M,\phi}$ such that $y \not \in S$ and $xy$ does not belong to a perfect matching transversal of $\Omega(M,\phi,S)$. Let $A$ denote a set consisting of one such arc $xy$ for each vertex $x \in S$ and let $J$ be the RB-digraph of $(M,\phi)$ satisfying $B(J) = A$.  By Lemma \ref{lemmaPMcond} there is a perfect matching transveral $(M',\psi) \in \Omega(M,\phi,S)$, distinct from $(M,\phi)$, which uses only edges in $\overline{J}$. But the only edges in $E(\overline{J}) \setminus M$ correspond to arcs in $A$, so $M'$ must contain at least one edge in $\overline{A}$. This contradicts the fact that $A$ is comprised of edges not in any perfect matching transversal, proving the claim.
+In the case $n \geq 2$, we claim that there exists a vertex $v_0 \in S$ such that every blue arc $v_0w$, where $w \not \in S$, belongs to a perfect matching transversal in $\Omega(M,\phi,S)$. Indeed, suppose for the sake of contradiction that for each vertex $x \in S$, there exists a blue arc $xy$ in $H=H_{M,\phi}$ such that $y \not \in S$ and $xy$ does not belong to a perfect matching transversal of $\Omega(M,\phi,S)$. Let $A$ denote a set consisting of one such arc $xy$ for each vertex $x \in S$ and let $J$ be the RB-digraph of $(M,\phi)$ satisfying $B(J) = A$.  By Lemma \ref{lemmaPMcond} there is a perfect matching transveral $(M',\psi) \in \Omega(M,\phi,S)$, distinct from $(M,\phi)$, which uses only edges in $\overline{J}$. But the only edges in $E(\overline{J}) \setminus M$ correspond to arcs in $A$, so $M'$ must contain at least one edge in $\overline{A}$. This contradicts the fact that $A$ is comprised of edges not in any perfect matching transversal, proving the claim.
 
 
 
-This allows us to consider a fixed $v_0 \in S$ such every blue arc $v_0w$, where $w \not \in S$, belongs to a perfect matching transversal.
+This allows us to consider a fixed $v_0 \in S$ such that every blue arc $v_0w$, where $w \not \in S$, belongs to a perfect matching transversal.
 %We consider such a vertex $v \in S \setminus V(Q)$ for which $d_H^{\times}(v,S \cup V(Q)) \geq d - q$. 
 %{\PB Todo: check notation}
 %which has at least $d - q$ blue out-neighbors $w \not \in S \cup V(Q)$. 
-Given a blue out-neighbor of $v_0$, say $w_0 \not \in S$, let $(M',\psi)$ denote the perfect matching transversal that contains the edge $v_0w_0$. Let $c = \psi(v_0w_0)$, let $G^\ast$ denote the induced subgraph of $G$ on $V \setminus \{v_0,w_0\}$, and let $\mathcal{G}^\ast$ denote the corresponding corresponding family of induced subgraphs of each $G_i$ for $i \in [n]\setminus\{c\}$. Moreover, let $S^\ast = S \setminus \{v_0\}$, let $M^\ast = M'\setminus \{v_0w_0\}$, and let $\psi^\ast = \psi \vert_{M^\ast}$%, and let $H^\ast = H_{\mathcal{G}^\ast,M^\ast,\phi^\ast}$
+Given a blue out-neighbor of $v_0$, say $w_0 \not \in S$, let $(M',\psi)$ denote the perfect matching transversal that contains the edge $v_0w_0$. Let $c = \psi(v_0w_0)$, let $G^\ast$ denote the induced subgraph of $G$ on $V \setminus \{v_0,w_0\}$, and let $\mathcal{G}^\ast$ denote the corresponding family of induced subgraphs of each $G_i$ for $i \in [n]\setminus\{c\}$. Moreover, let $S^\ast = S \setminus \{v_0\}$, let $M^\ast = M'\setminus \{v_0w_0\}$, and let $\psi^\ast = \psi \vert_{M^\ast}$%, and let $H^\ast = H_{\mathcal{G}^\ast,M^\ast,\phi^\ast}$
 . Observe that $(M^\ast,\psi^\ast)$ is a perfect matching transversal, $S^\ast$ is a maximal red-independent set with respect to $(M^\ast,\psi^\ast)$, and letting $H^\ast = H_{\mathcal{G}^\ast,M^\ast,\phi^\ast}$ it follows from \eqref{eq:PMswitch} that $|N^+_{B(H^\ast)}(v) \setminus S^\ast| \geq |N^+_{B(H)}(v) \setminus S| -1$ for each $v \in S^\ast$. Thus, $d^\times_{M^\ast,\phi^\ast}(S^\ast) \geq d-1$, and applying induction we see that $\mathcal{G}^\ast$ has at least $d!$ distinct perfect matching transversals. Moreover, each perfect matching transversal of $\mathcal{G}^\ast$, say $(L,\sigma)$, corresponds to a distinct perfect matching transversal of $\mathcal{G}$ obtained by adding $v_0w_0$ to $L$ and setting $\sigma(v_0w_0) = c$. Thus, we have a set $\mathcal{T}_{w_0}$ of at least $d!$ perfect matching transversals of $\mathcal{G}$ containing the edge $v_0w_0$.
 
 %we have $d_{M^\ast,\phi^\ast}(S$ Then, by applying the induction hypothesis to the transversal $M'$ along with the set $Q \cup \{v_0w\}$, we find $(d-q)!$ distinct perfect matching transversals containing $v_0w$. 
@@ -892,7 +902,7 @@ Given a blue out-neighbor of $v_0$, say $w_0 \not \in S$, let $(M',\psi)$ denote
 Now, because $d^\times_{M,\phi}(S) \geq d$, the number of edges in $G_{\phi(v_0w_0)}$ joining $v_0$ to $V \setminus S$ is at least $d+1$. Thus, we have at least $d+1$ sets $\mathcal{T}_w$ of distinct perfect matching transversals and, by considering the edge incident to $v_0$ in each matching, we see that $\mathcal{T}_w \cap \mathcal{T}_{w'}=\emptyset$ whenever $w \neq w'$. Thus gives us a total of $(d+1)\cdot d!=(d+1)!$ distinct perfect matching transversals of $\mathcal{G}$. 
 %
 \end{proof}
-
+{\LS All good.}
 
 
 \subsection{Proofs of Theorem \ref{thmPM} and Theorem \ref{thmDiracPM}}
@@ -946,7 +956,7 @@ Therefore, $B_i$ occurs if and only if  $s_i < \frac{1}{2}\alpha r - q_i$.
 %
 So, in determining an upper bound for the probability that $B_i$ occurs, we may assume without loss of generality that $q_i < \frac{1}{2}\alpha r$, as otherwise it is guaranteed that $B_i$ will not occur. 
 
-Now, the value of $q_i$ depends on whether $z_i=x_i$ or $z_i=y_i$. However, we can determine an upper bound which is independent of this choice. Observe that, for a fixed choice of $z_i$, the random variable $|N^+_{B(H)}(z_i) \setminus (Q_i \cup S)|$ is binomially distributed with mean at least $\frac{1}{2}r - q_i$. 
+Now, the value of $q_i$ depends on whether $z_i=x_i$ or $z_i=y_i$. However, we can determine an upper bound which is independent of this choice. Observe that, for a fixed choice of $z_i$, the random variable {\LS Should we just say $B_i$ here? Also the absolute value should be $< ..$} $|N^+_{B(H)}(z_i) \setminus (Q_i \cup S)|$ is binomially distributed with mean at least $\frac{1}{2}r - q_i$. 
 Thus, writing
 $$\frac{1}{2}\alpha r - q_{i} = \epsilon_i \left (\frac{1}{2}r - q_{i} \right ),$$
 where $\epsilon_i = \frac{\frac{1}{2}\alpha r - q_{i}}{\frac{1}{2}r - q_{i}}$, the Chernoff bound \eqref{eq:chernoff2} implies that $B_i$ occurs with probability at most
@@ -964,6 +974,8 @@ so that $\rho$ decreases as $q_i$ increases. This implies that $\rho(q_i)$ is ma
 of the bad event $B_i$ is at most
 $$\exp\left(-\frac{r(1-\alpha)^2}{4}\right).$$
 %The probability of a bad event $A_i$ is $2^{-t+1}$, and 
+{\LS This is nice trick to upper bound the probability of $B_i$.}
+
 Because $B_i$ and $B_j$ are codependent if and only if there is a path of length at most two between $\{x_i,y_i\}$ and $\{x_j,y_j\}$, the fact that $\Delta(G) \leq m$ tells us that each bad event $B_i$ is codependent with at most $2m^2-2m$ other bad events. By Theorem \ref{LLL}, if we assign a value $x$ to each bad event, then the following inequality guarantees that with positive probability, no bad event occurs:
 %\frac{1}{2m^2 - 2m + 1}
 %$$2^{-k} < x(1-x)^{2m^2-2m}.$$
@@ -1303,7 +1315,7 @@ While we have obtained factorial lower bounds for the number of Hamiltonian tran
 
 
 
-We can also ask a similar question concerning families in which all graphs are regular. In \cite{Haythorpe} Haythorpe conjectures that for sufficiently large $k$, a Hamiltonian $k$-regular graph on $n$ vertices contains $\Omega(k^n)$ distinct Hamiltonian cycles. It would be also be interesting to try to prove or disprove a similar lower bound for the number of distinct Hamiltonian transversals over a $k$-regular graph family with a Hamiltonian transversal. Notice that this would be a significant improvement upon the bound in Theorem \ref{thmMain}. 
+We can also ask a similar question concerning families in which all graphs are regular. In \cite{Haythorpe} Haythorpe conjectures that for sufficiently large $k$, a Hamiltonian $k$-regular graph on $n$ vertices contains $\Omega(k^n)$ distinct Hamiltonian cycles. It would also be interesting to try to prove or disprove a similar lower bound for the number of distinct Hamiltonian transversals over a $k$-regular graph family with a Hamiltonian transversal. Notice that this would be a significant improvement upon the bound in Theorem \ref{thmMain}. 
 
 
 
